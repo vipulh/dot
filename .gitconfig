@@ -1,0 +1,14 @@
+[user]
+	name = Shubham Chaudhary
+	email = shubhamchaudhary92@gmail.com
+[core]
+	editor = vi
+[credential]
+	helper = cache --timeout=3600
+[push]
+	default = matching
+[alias]
+	lol = log --oneline --graph --decorate
+    st = status -s
+[color]
+	ui = true
