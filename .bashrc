@@ -1,0 +1,1 @@
+/media/chaudhary/Ubuntu/home/chaudhary/.bashrc
