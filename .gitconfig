@@ -9,6 +9,7 @@
 	default = matching
 [alias]
 	lol = log --oneline --graph --decorate
-    st = status -s
+	st = status -s
 [color]
 	ui = true
+
