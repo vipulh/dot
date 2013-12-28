@@ -83,5 +83,4 @@ alias xew='`ls -t *.pl | head -1 `'
 alias lsd='ls -l | grep "^d"'   #list only directories
 alias dn='OPTIONS=$(\ls -F | grep /$); select s in $OPTIONS; do cd $PWD/$s; break;done'
 
-
-
+alias acki='ack --ignore-dir=build' 
