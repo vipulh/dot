@@ -210,10 +210,11 @@ mkcdr () {
     cd $1
 }
 
+# Reload bashrc; best when editing .bashrc
 alias reload='source ~/.bashrc'
 alias biggest='BLOCKSIZE=1048576; du -x | sort -nr | head -10'
 
-## App-specific
+## App-specific aliases
 alias wget='wget -c'
 alias trash='mv -t ~/.local/share/Trash/files'
 

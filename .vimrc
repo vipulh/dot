@@ -1,10 +1,6 @@
-set number
-set tags=./tags,tags,./TAGS,TAGS,~/tags,~/.tags
-map <C-y> g<C-]>
-set hlsearch
-let c_space_errors=1
-"set number
 " Formatting {
+    set number  " Alternative: set nu!
+    set hlsearch    " Highlight searched item
     set nowrap                      " wrap long lines
     set autoindent                  " indent at the same level of the previous line
     set shiftwidth=4                " use indents of 4 spaces
@@ -21,10 +17,14 @@ let c_space_errors=1
 
 
 " General {
-   " set background=dark         " Assume a dark background
-   " if !has('win32') && !has('win64')
-   "     set term=$TERM       " Make arrow and other keys work
-   " endif
+    set tags=./tags,tags,./TAGS,TAGS,~/tags,~/.tags     " Exuberent ctags
+    " Move to a given tag
+    map <C-y> g<C-]>
+    " set background=dark         " Assume a dark background
+    " if !has('win32') && !has('win64')
+    "     set term=$TERM       " Make arrow and other keys work
+    " endif
+    let c_space_errors=1    " Show error if space left at end of line
     filetype plugin indent on   " Automatically detect file types.
     syntax on                   " syntax highlighting
     set mouse=a                 " automatically enable mouse usage
