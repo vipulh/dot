@@ -153,9 +153,15 @@ welcome() {
     #toilet "Welcome, " $USER;
     echo -e ""; cal ;
     echo -ne "Today is "; date #date +"Today is %A %D, and it is now %R"
+    #if [[ `date +"%D"` =~ 01/01* ]];
+    if [[ `date +"%d%m"` == 0101 ]]; then 
+        echo "Hey man, I forgot"; figlet "Happy New Year"; echo "$USER"; 
+    elif [[ `date +"%d%m"` == 2603 ]]; then
+        figlet "Happy Birthday"    
+    fi;
     echo -e ""
-    echo -ne "Up time:";uptime | awk /'up/'
-    echo -en "Local IP Address :"; /sbin/ifconfig wlan0 | awk /'inet addr/ {print $2}' | sed -e s/addr:/' '/ 
+    echo -ne "Up time:"; uptime | awk /'up/'
+    echo -en "Local IP Address :"; /sbin/ifconfig wlan0 | awk /'inet addr/ {print $2}' | sed -e s/addr:/' '/  || /sbin/ifconfig wlan1 #dubious, gotta test
     df -h | grep /dev/sda7
     echo "";
 }
