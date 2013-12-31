@@ -10,6 +10,8 @@
 [alias]
 	lol = log --oneline --graph --decorate
 	st = status -s
+	unstage = reset HEAD --
+	last = log -1 HEAD
 [color]
 	ui = true
 
