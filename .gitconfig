@@ -9,6 +9,7 @@
 	default = matching
 [alias]
 	lol = log --oneline --graph --decorate
+    lof = log --pretty=fuller
 	st = status -s
 	unstage = reset HEAD --
 	last = log -1 HEAD
