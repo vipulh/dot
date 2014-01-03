@@ -1,6 +1,7 @@
 [user]
 	name = Shubham Chaudhary
 	email = shubham.chaudhary@kdemail.net
+	logallrefupdates=true
 [core]
 	editor = vi
 [credential]
