@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+export PATH=$PATH:$HOME/kde/bin
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -84,7 +86,7 @@ fi
 
 # some more ls aliases
 alias ll='ls -alF'
-alias la='ls -a'
+alias lla='ls -a'
 #alias l='ls -CF'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -112,7 +114,11 @@ if ! shopt -oq posix; then
 fi
 
 export http_proxy= #"http://ishubhamch:chaudhary@192.168.60.10:3128/"
+export https_proxy= #"http://ishubhamch:chaudhary@192.168.60.10:3128/"
 
+DEBFULLNAME="Shubham Chaudhary"
+DEBEMAIL="shubham.chaudhary@kdemail.net"
+EMAIL="shubham.chaudhary@kdemail.net"
 
 if [ -f ~/.kde-bashrc ]; then
     . ~/.kde-bashrc
@@ -159,8 +165,9 @@ welcome() {
     elif [[ `date +"%d%m"` == 2603 ]]; then
         figlet "Happy Birthday"    
     fi;
-    echo -e ""
-    echo -ne "Up time:"; uptime | awk /'up/'
+    #echo -e ""
+    #echo -ne "Up time:"; uptime | awk /'up/'
+    echo "The system has been up for `uptime | awk {'print $3 $4'}`";
     echo -en "Local IP Address :"; /sbin/ifconfig wlan0 | awk /'inet addr/ {print $2}' | sed -e s/addr:/' '/  || /sbin/ifconfig wlan1 #dubious, gotta test
     df -h | grep /dev/sda7
     echo "";
@@ -237,5 +244,17 @@ alias trash='mv -t ~/.local/share/Trash/files'
 #show most popular commands
 alias top-commands='history | awk "{print $2}" | awk "{print $1}" |sort|uniq -c | sort -rn | head -10'
 #alias top-commands='history | awk "{print $2}" | awk "BEGIN {FS="|"} {print $1}" |sort|uniq -c | sort -rn | head -10'
+
+# Since I <3 KDE, we'd use KDE to manage my keychain.
+if [ -d "$HOME/.kde" ]; then
+  #export SSH_ASKPASS=kwalletaskpass
+  export KDEDIRS="$HOME/.kde:$HOME/.local:$KDEDIRS"
+fi
+
+if [ -d "$HOME/.homesick" ]; then
+    source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+    source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
+    alias hs='homeshick'
+fi
 
 

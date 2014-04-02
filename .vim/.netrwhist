@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/chaudhary/code/cpp/home'
-let g:netrw_dirhist_2='/home/chaudhary'
-let g:netrw_dirhist_3='/home/chaudhary/temp/asdf'
-let g:netrw_dirhist_4='/home/chaudhary/temp/hackit'
-let g:netrw_dirhist_5='/home/chaudhary/temp/debian'
-let g:netrw_dirhist_6='/home/chaudhary/open/sfd'
-let g:netrw_dirhist_7='/home/chaudhary/code/perl'
